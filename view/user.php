@@ -67,6 +67,7 @@ require_once '../controller/allblogs.php';
             <thead>
             <tr>
                 <th>Blogs</th>
+				<th>Blog Image</th>
 				<?php
 					if($_GET['id']==$_SESSION['uname']){
 						echo '<th>Action</th>';
@@ -79,7 +80,8 @@ require_once '../controller/allblogs.php';
 					<tr>
 					<?php
 					if($_GET['id']==$blog['userid']){
-					echo '<td data-label="Title"><a href=blog.php?slug='.$blog['slug'].' </a>'.$blog['title'].'</td>';
+					echo '<td data-label="Title"><a href=blog.php?slug='.$blog['slug'].' </a>'.$blog['title'].'</td>
+					<td data-label="Blog Image"><img width="200px" src='.$blog['image'].' " alt="'.$blog['image'].' "></td>';
 					if($_SESSION['uname']==$blog['userid'])
 					echo
 						'<td data-label="Action">

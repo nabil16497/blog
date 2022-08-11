@@ -10,6 +10,11 @@ function fetchUser($id){
 	return showUser($id);
 
 }
+function fetchAllUser(){
+	return showAllUser();
+
+}
+
 
 function fetchUserBlogs($id){
 	return showAllBlog($id);

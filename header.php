@@ -28,7 +28,9 @@ else{
         		<div class="line"></div>
       		</div>
       <ul class="nav-links">
-        <li><a href="view/user.php?id=<?php echo $_SESSION['uname'] ?>"><?php echo strval($_SESSION['uname']) ?></a>
+        <li><a href="view/user.php?id=<?php echo $_SESSION['uname'] ?>">My Profile</a>
+        </li>
+		<li><a href="view/showallblogs.php?userid=<?php echo $_SESSION['uname'] ?>">My Blogs</a>
         </li>
         <li><a href="view/showallblogs.php">All Blogs</a>
         </li>

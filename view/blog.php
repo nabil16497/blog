@@ -44,6 +44,8 @@ require_once '../controller/allComments.php';
 					'.$blog["title"].'
 					</th>
 				</tr>
+				<tr>
+				<td data-label="Blog Image"><img width="400px" src='.$blog['image'].' " alt="'.$blog['title'].' "></td></tr>
                 <tr>
 				<td data-label="Description">'.$blog['description'].' </td></tr>
      </tbody>';};?>
@@ -83,7 +85,7 @@ require_once '../controller/allComments.php';
             if($comment['blogid']==$view['id']){
             echo
 				'<tr>
-					<th><abbr title="Click here to see User"><a href="user.php?id='.$comment['userid'].' ">'.$comment['userid'].' </a></abbr> ==>
+					<th><abbr title="Click here to see User"><a href="user.php?id='.$comment['userid'].' ">'.$comment['userid'].' </a></abbr>
 					</th>
 					<td data-label="'.$comment['userid'].' ">'.$comment['comment'].' </td>
 				</tr>';

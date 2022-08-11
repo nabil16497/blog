@@ -51,7 +51,11 @@ $blogs = fetchAllBlogs();
                 <label for="description" class="label-name">
                 <span class="content-name">Blog</span>
                 </label>
-			</div>			
+			</div>	
+			<br>
+        	<input type="file" id="file" name="file">
+        	<label for="file" class="filelabel">Select Blog Image</label>
+        	<br>		
             <input type="hidden" id="userid" name="userid" value=<?php echo $_SESSION['uname'] ?>>
   			<br>
 			<hr>

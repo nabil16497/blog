@@ -54,8 +54,8 @@ VALUES (:firstname, :lastname, :contact, :email, :gender, :dob, :image, :passwor
 
 function addBlogs($data){
 	$conn = db_conn();
-    $selectQuery = "INSERT into blogs (title, slug, description, userid)
-VALUES (:title, :slug, :description, :userid)";
+    $selectQuery = "INSERT into blogs (title, slug, description, userid, image)
+VALUES (:title, :slug, :description, :userid, :image)";
     try{
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
@@ -63,7 +63,8 @@ VALUES (:title, :slug, :description, :userid)";
             ':title' => $data['title'],
             ':slug'  => $data['slug'],
             ':description'  => $data['description'],
-            ':userid'  => $data['userid']
+            ':userid'  => $data['userid'],
+            ':image' => $data['image']
 
         ]);
         $conn = null;
@@ -125,6 +126,39 @@ function showAllBlog($id){
 function deleteBlog($id){
 	$conn = db_conn();
     $selectQuery = "DELETE FROM `blogs` WHERE `id` = ?";
+    try{
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+        $conn = null;
+
+        return true;
+
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+   
+}
+
+
+
+
+function getcomments(){
+	$conn = db_conn();
+    $selectQuery = 'SELECT * FROM `comments` ';
+    try{
+        $stmt = $conn->query($selectQuery);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+}
+
+
+
+function deleteComment($id){
+	$conn = db_conn();
+    $selectQuery = "DELETE FROM `comments` WHERE `id` = ?";
     try{
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([$id]);
