@@ -44,15 +44,19 @@ $blogs = fetchAllBlogs();
 					<span class="content-name">Slug</span>
 					</label>
 			</div>
-
-			
-			<div class="form">
-                <input type="text" id="description" name="description" autocomplete="off" required />
-                <label for="description" class="label-name">
-                <span class="content-name">Blog</span>
-                </label>
-			</div>	
+		
+				<br>
+				
+		
+				
+				<textarea name='description' id="description" rows='12' placeholder='Write Your Blog Here' required></textarea>
+				<br>
+				<br>
+				<hr>    
+                
+            	
 			<br>
+			
         	<input type="file" id="file" name="file">
         	<label for="file" class="filelabel">Select Blog Image</label>
         	<br>		

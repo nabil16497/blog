@@ -31,9 +31,19 @@ footer{
 
 /*--------form-------*/
 
+textarea{
+    width: 95%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: #FCF6F5FF;
+    border: 2px solid #2BAE66FF;
+    resize: none;
+    color: #2BAE66FF;
+}
+
 
 .form{
-  width: 95%;
+  width: 90%;
   position: relative;
   height: 50px;
   overflow: hidden;

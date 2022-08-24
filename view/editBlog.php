@@ -50,12 +50,16 @@ $blogs = fetchAllBlogs();
                         </div>
 
                         
-                        <div class="form">
-                            <input value='.$blog['description'].' type="text" id="description" name="description" autocomplete="off" required />
-                            <label for="description" class="label-name">
-                            <span class="content-name">Blog</span>
-                            </label>
-                        </div>			
+                            <br>
+                            <textarea name="description" id="description" rows="12" placeholder="Write Your Blog Here" required> '.$blog['description'].' </textarea>
+                            <br>
+				            <br>
+				            <hr>    
+                
+            	
+			                <br>
+                           
+    			
                         <input type="hidden" id="userid" name="userid" value='.$blog['userid'].'>
                         <input type="hidden" id="id" name="id" value='.$blog['id'].'>'
                         ;}?>
